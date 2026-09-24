@@ -1,0 +1,55 @@
+{
+  "expo": {
+    "name": "VoiceUPI",
+    "slug": "voiceupi-mvp",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "scheme": "voiceupi",
+    "userInterfaceStyle": "dark",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.voiceupi.mvp",
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "VoiceUPI uses your microphone to understand payment commands.",
+        "NSSpeechRecognitionUsageDescription": "VoiceUPI uses speech recognition to turn your payment command into a structured intent.",
+        "NSCameraUsageDescription": "VoiceUPI uses the camera to scan UPI QR codes.",
+        "LSApplicationQueriesSchemes": [
+          "upi",
+          "phonepe",
+          "tez",
+          "gpay",
+          "paytmmp",
+          "bhim"
+        ],
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.voiceupi.mvp",
+      "permissions": [
+        "CAMERA",
+        "RECORD_AUDIO"
+      ]
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow VoiceUPI to scan UPI QR codes."
+        }
+      ],
+      [
+        "expo-speech-recognition",
+        {
+          "microphonePermission": "VoiceUPI uses your microphone to understand payment commands.",
+          "speechRecognitionPermission": "VoiceUPI uses speech recognition to turn your payment command into a structured intent."
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "f8d5473a-ac52-408a-95fc-62d8754c57a3"
+      }
+    }
+  }
+}
